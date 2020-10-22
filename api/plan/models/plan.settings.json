@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "name": "plans",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "purchaseFee": {
+      "type": "integer"
+    },
+    "validity": {
+      "type": "integer"
+    },
+    "validityUnit": {
+      "type": "string"
+    },
+    "features": {
+      "type": "json"
+    },
+    "planId": {
+      "type": "uid"
+    },
+    "product": {
+      "collection": "products",
+      "via": "plan"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "plans"
+    }
+  }
+}

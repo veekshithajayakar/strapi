@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "name": "Products"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "productId": {
+      "type": "uid"
+    },
+    "plans": {
+      "collection": "plan"
+    },
+    "plan": {
+      "via": "product",
+      "model": "plan"
+    }
+  }
+}
